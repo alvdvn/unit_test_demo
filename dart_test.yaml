@@ -1,0 +1,28 @@
+# dart_test.yaml
+test:
+  # Configure the output format of the test results
+  reporter: expanded
+
+  # Set the number of test suites to run in parallel
+  concurrency: 4
+
+  # Configure timeouts for test cases
+  timeout:
+    # Hard timeout: a test will be killed if it takes longer than this
+    hard: 1m
+    # Soft timeout: a warning will be displayed if a test exceeds this duration
+    soft: 45s
+
+  # Configure tags for running specific groups of tests
+  tags:
+    # Example of excluding tests with the 'integration' tag
+    exclude: ['integration']
+
+  # Configure test paths (optional)
+  paths:
+    - test/
+
+  # Configure platform selectors (optional)
+  platforms:
+    - vm
+    - chrome
