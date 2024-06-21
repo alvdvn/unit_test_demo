@@ -1,5 +1,4 @@
-package com.example.unit_test_demo.test
-
+package com.example.unit_test_demo
 import com.example.unit_test_demo.MyClass
 import org.junit.Assert.assertEquals
 import org.junit.Test

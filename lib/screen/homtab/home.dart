@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
                       return GestureDetector(
                         onTap: () {
                           _showSnackBar(context, items[index].toString());
-                          _openNativeScreen();
+
                         },
                         child: Container(
                           height: 50,
@@ -59,11 +59,5 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-  Future<void> _openNativeScreen() async {
-    try {
-      await platform.invokeMethod('openNativeScreen');
-    } on PlatformException catch (e) {
-      print("Failed to open native screen: '${e.message}'.");
-    }
-  }
+
 }

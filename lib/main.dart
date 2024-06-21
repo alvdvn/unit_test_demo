@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:unit_test_demo/injection/dl.dart';
 import 'package:unit_test_demo/screen/demo_widget.dart';
+import 'package:unit_test_demo/screen/homtab/home.dart';
 import 'package:unit_test_demo/screen/login/login_wiget.dart';
 
 void main() async{

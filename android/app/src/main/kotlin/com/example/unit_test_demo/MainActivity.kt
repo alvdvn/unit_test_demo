@@ -8,7 +8,7 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 
 
-class MainActivity: FlutterActivity(){
+class MainActivity : FlutterActivity(){
     private val CHANNEL = "UnitTestDemo"
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
@@ -25,7 +25,7 @@ class MainActivity: FlutterActivity(){
     }
 
     private fun openNativeScreen() {
-        val intent = Intent(this, NativeActivity::class.java)
+        val intent = Intent(this, com.example.unit_test_demo.NativeActivity::class.java)
         startActivity(intent)
     }
 }
