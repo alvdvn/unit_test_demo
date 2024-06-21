@@ -53,6 +53,7 @@ class _LoginWigetState extends State<LoginWiget> {
   Widget _emailAndPasswordFiels() => Column(
     children: [
       TextField(
+        key: const Key('email'),
         controller: _emailTextController,
         decoration: const InputDecoration(
           border: OutlineInputBorder(),
@@ -63,6 +64,7 @@ class _LoginWigetState extends State<LoginWiget> {
       ),
       _smallVerticalSpacer(),
       TextField(
+        key: const Key('password'),
         controller: _passwordTextController,
         decoration: const InputDecoration(
           border: OutlineInputBorder(),
