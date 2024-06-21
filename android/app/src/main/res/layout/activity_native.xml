@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2F2F2"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlBackgroundAnimation"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:fitsSystemWindows="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivAvatar"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/ic_avatar_ninja"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvNameCaller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="#111111"
+                    android:textSize="20sp"
+                    tools:text="Caller Name"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="#111111"
+                    android:textSize="24sp"
+                    tools:text="Phone Number" />
+
+                <TextView
+                    android:id="@+id/tvCallDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:autoSizeTextType="uniform"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="#52C41A"
+                    android:textSize="16sp"
+                    tools:text="00:00" />
+
+                <LinearLayout
+                    android:id="@+id/llKeyboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/in_progress_call_dialpad_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/keypadDialogEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textSize="28sp"
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:inputType="text"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            tools:ignore="Autofill,HardcodedText,LabelFor" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:weightSum="3">
+
+                            <Button
+                                android:id="@+id/btn01"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center"
+                                style="?android:attr/buttonBarButtonStyle"
+                                tools:ignore="HardcodedText"
+                                android:textSize="25sp"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/button_states"
+                                android:text="1"/>
+                            <Button
+                                android:id="@+id/btn02"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                tools:ignore="HardcodedText"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:text="2"
+                                android:textSize="25sp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/button_states"
+                                style="?android:attr/buttonBarButtonStyle" />
+                            <Button
+                                android:id="@+id/btn03"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:text="3"
+                                android:textSize="25sp"
+                                tools:ignore="HardcodedText"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/button_states"
+                                style="?android:attr/buttonBarButtonStyle" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:paddingTop="10dp"
+                            android:weightSum="3">
+
+                            <Button
+                                android:id="@+id/btn04"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:text="4"
+                                android:textSize="25sp"
+                                tools:ignore="HardcodedText"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/button_states"
+                                style="?android:attr/buttonBarButtonStyle" />
+                            <Button
+                                android:id="@+id/btn05"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:text="5"
+                                android:textSize="25sp"
+                                tools:ignore="HardcodedText"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/button_states"
+                                style="?android:attr/buttonBarButtonStyle" />
+                            <Button
+                                android:id="@+id/btn06"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:text="6"
+                                android:textSize="25sp"
+                                tools:ignore="HardcodedText"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/button_states"
+                                style="?android:attr/buttonBarButtonStyle" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:paddingTop="10dp"
+                            android:weightSum="3">
+
+                            <Button
+                                android:id="@+id/btn07"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:text="7"
+                                android:textSize="25sp"
+                                tools:ignore="HardcodedText"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/button_states"
+                                style="?android:attr/buttonBarButtonStyle" />
+                            <Button
+                                android:id="@+id/btn08"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:text="8"
+                                android:textSize="25sp"
+                                tools:ignore="HardcodedText"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/button_states"
+                                style="?android:attr/buttonBarButtonStyle" />
+                            <Button
+                                android:id="@+id/btn09"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:text="9"
+                                android:textSize="25sp"
+                                tools:ignore="HardcodedText"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/button_states"
+                                style="?android:attr/buttonBarButtonStyle" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:paddingTop="10dp"
+                            android:weightSum="3">
+                            <Button
+                                android:id="@+id/btnKyTuSao"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:text="*"
+                                android:textSize="25sp"
+                                tools:ignore="HardcodedText"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/button_states"
+                                style="?android:attr/buttonBarButtonStyle" />
+                            <Button
+                                android:id="@+id/btn0"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:text="0"
+                                android:textSize="25sp"
+                                tools:ignore="HardcodedText"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/button_states"
+                                style="?android:attr/buttonBarButtonStyle" />
+                            <Button
+                                android:id="@+id/btnKyTuThang"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:text="#"
+                                android:textSize="25sp"
+                                tools:ignore="HardcodedText"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/button_states"
+                                style="?android:attr/buttonBarButtonStyle" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/llActionLoudSpeaker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp">
+
+                <ImageView
+                    android:id="@+id/ivLoudSpeaker"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/icon_loudspeaker_off"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/ivLoudSpeaker"
+                    android:gravity="center"
+                    android:text="Loa"
+                    android:textColor="#111111"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlKeyboard"
+                android:layout_width="80dp"
+                android:layout_height="80dp">
+
+                <ImageView
+                    android:id="@+id/ivKeyboard"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/ic_keyborad_normal"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tvKeyboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/ivKeyboard"
+                    android:gravity="center"
+                    android:text="Bàn phím"
+                    android:textColor="#111111"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llAction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="15dp"
+            android:fitsSystemWindows="true"
+            android:orientation="horizontal"
+            android:visibility = "gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="UseCompoundDrawables">
+
+                <RelativeLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp">
+
+                    <ImageView
+                        android:id="@+id/ivDeclineCall"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/bg_button_decline"
+                        android:padding="15dp"
+                        android:src="@drawable/ic_decline"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvDecline"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/ivDeclineCall"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:text="Từ chối"
+                        android:textColor="#111111"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:orientation="vertical"
+                tools:ignore="UseCompoundDrawables">
+
+                <RelativeLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp">
+
+
+                    <ImageView
+                        android:id="@+id/ivAcceptCall"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/bg_button_accept"
+                        android:padding="15dp"
+                        android:src="@drawable/ic_accept"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvAccept"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/ivAcceptCall"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:text="Trả lời"
+                        android:textColor="#111111"
+                        android:textSize="14sp" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llOnlyDecline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:layout_marginBottom="15dp"
+            android:fitsSystemWindows="true"
+            android:orientation="horizontal"
+            android:visibility = "visible">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="UseCompoundDrawables">
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp">
+
+                    <ImageView
+                        android:id="@+id/ivOnlyDeclineCall"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/bg_button_decline"
+                        android:padding="15dp"
+                        android:src="@drawable/ic_decline"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvOnlyDecline"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/ivOnlyDeclineCall"
+                        android:gravity="center"
+                        android:text="Kết thúc"
+                        android:textColor="#111111"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

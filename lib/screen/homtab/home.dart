@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -9,7 +10,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   final List<String> items = List<String>.generate(10, (i) => "Item $i");
-
+  static const platform = MethodChannel('UnitTestDemo');
   @override
   Widget build(BuildContext context) {
     return  Container(
@@ -56,5 +57,12 @@ class _HomeState extends State<Home> {
         duration: Duration(seconds: 2),
       ),
     );
+  }
+  Future<void> _openNativeScreen() async {
+    try {
+      await platform.invokeMethod('openNativeScreen');
+    } on PlatformException catch (e) {
+      print("Failed to open native screen: '${e.message}'.");
+    }
   }
 }
