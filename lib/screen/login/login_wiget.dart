@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:unit_test_demo/screen/login/login_controller.dart';
 
 class LoginWiget extends StatefulWidget {
   const LoginWiget({super.key});
@@ -15,6 +16,7 @@ class _LoginWigetState extends State<LoginWiget> {
 
   final TextEditingController _emailTextController = TextEditingController();
   final TextEditingController _passwordTextController = TextEditingController();
+  var isShowErrorText = false;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +37,15 @@ class _LoginWigetState extends State<LoginWiget> {
         _mediumVerticalSpacer(),
         _emailAndPasswordFiels(),
         _loginButton(),
+        _smallVerticalSpacer(),
+        TextButton(onPressed: () {
+
+        }, child: const Text('Forgot password',
+            style: TextStyle(
+              color: Colors.amber,
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+            )))
       ],
     ),
   );
@@ -55,7 +66,8 @@ class _LoginWigetState extends State<LoginWiget> {
       TextField(
         key: const Key('email'),
         controller: _emailTextController,
-        decoration: const InputDecoration(
+        decoration: InputDecoration(
+          errorText: LoginController.emailValidate(_emailTextController.text),
           border: OutlineInputBorder(),
           contentPadding: EdgeInsets.all(8),
           hintText: 'Email',
@@ -74,33 +86,24 @@ class _LoginWigetState extends State<LoginWiget> {
         ),
       ),
       _smallVerticalSpacer(),
-      TextButton(onPressed: () {
-
-      }, child: const Text('Forgot password',
-          style: TextStyle(
-            color: Colors.amber,
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-          )))
     ],
   );
 
   Widget _smallVerticalSpacer() => const SizedBox(height: 10);
 
 
-
   Widget _loginButton() => SizedBox(
-  width: double.infinity,
-  child: ElevatedButton(
-  onPressed: () {},
-  style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.blue)),
-  child: const Text(
-  'Login',
-  style: TextStyle(
-  color: Colors.white,
-  fontSize: 16,
-  fontWeight: FontWeight.bold)
-  )
-  ),
-  );
+        width: double.infinity,
+        child: ElevatedButton(
+            onPressed: () {
+
+            },
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(isShowErrorText == true ? Colors.blue : Colors.white30)),
+            child: const Text('Login',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold))),
+      );
 }
