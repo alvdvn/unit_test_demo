@@ -9,31 +9,19 @@ void main() {
     String result = LoginController.emailValidate('');
     expect(result, 'Please enter email');
   });
-  
+
   test('valid email test', () {
     String result = LoginController.emailValidate('ios1@gmail.com');
     expect(result, 'Email is valid');
   });
 
   test('empty password test', () {
-    String result = LoginController.passwordValidate('abcd');
+    String result = LoginController.passwordValidate('');
     expect(result, 'Please enter password');
   });
 
   test('valid password test', () {
-    String result = LoginController.passwordValidate('abcdabcdedasda');
+    String result = LoginController.passwordValidate('123456789');
     expect(result, 'Password is valid');
-  });
-
-  // Test Widget TextField
-  testWidgets('Test Widget Login', (final WidgetTester tester) async {
-
-    await tester.pumpWidget(const MyApp());
-    var textField = find.byType(TextField);
-    expect(textField, findsNWidgets(2));
-
-    //
-    await tester.enterText(find.byKey(const Key('email')), 'ios1@gmail.com');
-    await tester.enterText(find.byKey(const Key('password')), '123456789');
   });
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class LoginController extends GetxController {
+class LoginController {
 
-  static String emailValidate(final String value) {
+  static String emailValidate(String value) {
     String message = '';
     if (value.trim().isEmpty) message = 'Please enter email';
     /// search for email validate in func
@@ -23,7 +23,7 @@ class LoginController extends GetxController {
     return message;
   }
 
-  static String passwordValidate(final String value) {
+  static String passwordValidate(String value) {
     String message = '';
     if (value.trim().isEmpty) message = 'Please enter password';
     if (value.trim().isNotEmpty && value.length < 8) {
@@ -33,5 +33,13 @@ class LoginController extends GetxController {
       message = 'Password is valid';
     }
     return message;
+  }
+
+  String? passwordEmpty(String value) {
+    if (value.isEmpty) {
+      return 'Vui lòng điền mật khẩu';
+    } else {
+      return null;
+    }
   }
 }
