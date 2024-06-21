@@ -3,6 +3,9 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:get/get.dart';
+import 'package:unit_test_demo/screen/demo_widget.dart';
+import 'package:unit_test_demo/screen/homtab/home.dart';
 import 'package:unit_test_demo/screen/login/login_controller.dart';
 
 class LoginWiget extends StatefulWidget {
@@ -96,7 +99,7 @@ class _LoginWigetState extends State<LoginWiget> {
         width: double.infinity,
         child: ElevatedButton(
             onPressed: () {
-
+               Get.to(DemoWidget());
             },
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(isShowErrorText == true ? Colors.blue : Colors.white30)),

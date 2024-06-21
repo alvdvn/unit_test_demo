@@ -28,6 +28,7 @@ class _HomeState extends State<Home> {
                       return GestureDetector(
                         onTap: () {
                           _showSnackBar(context, items[index].toString());
+                          _openNativeScreen();
                         },
                         child: Container(
                           height: 50,

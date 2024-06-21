@@ -9,7 +9,7 @@ import io.flutter.plugin.common.MethodChannel
 
 
 class MainActivity: FlutterActivity(){
-    private val CHANNEL = "com.example.your_project/native"
+    private val CHANNEL = "UnitTestDemo"
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
